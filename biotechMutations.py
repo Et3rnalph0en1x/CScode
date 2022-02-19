@@ -16,7 +16,7 @@ DNA2 = list(DNA2a)
 
 lengthDNA = len(DNA1)
 
-#Counters
+#Counters for information that will be printed/returned at the end of the program
 
 mutations = 0
 
@@ -30,6 +30,8 @@ transversions = 0
 
 synonymousMutations = 0
 
+synonymousMutationLocations = []
+
 nonsynonymousMutations = 0
 
 rawCodons1 = []
@@ -40,12 +42,25 @@ codonList1 = []
 
 codonList2 = []
 
+#This function goes throughout each DNA sequence and splits them up into groups of three base pairs. These three base pairs get appended to
+
+#a list called rawCodons(1/2), which will then be processed below.
 
 for l in range(0, lengthDNA, 3):
 
     rawCodons1.append(DNA1[l : l + 3])
 
     rawCodons2.append(DNA2[l : l + 3])
+
+#This function takes the list of rawCodons and uses nested if/elif/else loops to determine what codon the specific group of three is. For example, if
+
+#the codon from rawCodons is TTC, it would return yes on the first if loop, yes on the second if loop, no on the third if loop, and yes on the second elif loop.
+
+#This means that TTC is the codon for amino acid Phe. The string Phe is then appended to another list called codonList(1/2). This function is repeated twice, one for
+
+#the first DNA sequence, and one for the second DNA sequence. An alternate way to code this would be to keep this function in a main function, and call it twice,
+
+#once for the first DNA sequence, and one for the second DNA sequence.
 
 for k in range(rawCodons1):
 
@@ -643,8 +658,32 @@ for k in range(rawCodons2):
                 codonList2.append('Gly')
 
 
-#For loop that iterates through each DNA Sequence
+#This is a for loop that iterates for the length of the DNA sequence. Given the background of this problem/program, both DNA sequences would be the exact same length.
 
+#The inside if loop checks if the i-th entry for each sequence. If they are the same, it moves on to the next base pair in each sequence. If they aren't the same, the code
+
+#moves inward in the if loop. First, a counter is incremented by one to show that there is a mutation present. The i value, which is the location of the differing base pairs,  
+
+#is appended to a list that marks the locations of the mutations. Next is a series of if/elif/else loops. These loops use logic, with and/or checkers, to determine if the mutation
+
+#is a transition of a transversion. An example for a transition mutation would be if DNA sequence 1's base pair is C, and DNA sequence 2's base pair is T. This would prove the logic in
+
+#elif loop 1 correct, which would increment the transition counter by one, and also append a string called Transition to a list called mutationsType, that marks whether the
+
+#mutation is a transition or transversion. This will be used later to return the specific type of mutation at a certain location. The last part of the if loop that is triggered if
+
+#a mutation is found deals with synonymous versus nonsynonymous mutations. Since both synonymous and nonsynonymous mutatations occurs when there is a mutation, we add this code to the  
+
+#end of this if loop instead of having it outside. Synonymous and nonsynonymous mutations differ based on whether the amino acids change or not, so this code will reference the 
+
+#earlier function that translated the DNA sequences into raw codons into amino acids. The variable z is equal to i / 3. Since i is our position in the DNA sequence, this divided by 
+
+#three, rounded down as its casted as an integer, would return the position of the amino acid in the list from the code referenced above. The next if loop checks whether the z-th codon
+
+#in DNA sequence 1 and 2 are the same. If they are the same, the synonymous counter is incremented by one; if they aren't, the nonsynonymous counter is increased by one. The last part  
+
+#of the synonymous mutation code appends synonymous or nonsynonymous mutation to a list. This will be used later similar to the transition/transversion lists.
+                
 for i in range(lengthDNA):
             
     if DNA1[i] != DNA2[i]:
@@ -689,25 +728,35 @@ for i in range(lengthDNA):
 
             mutationsType.append('Transversion')
             
-        z = i / 3
+        z = int(i / 3)
 
         if codonList1[z] == codonList2[z]:
 
             synonymousMutations += 1
 
+            synonymousMutationLocations.append('Synonymous Mutation.')
+
         else:
 
             nonsynonymousMutations += 1
 
-    
+            synonymousMutationLocations.append('Nonsynonymous Mutation.')
 
 
-        
+#This last portion deals with returning the values that have been processed above. The first line deals with similarity, and returns the percentage of base pairs that
+
+#aren't mutated. There are several print statements that print the values of the variables, such as similarity, number of mutations, and the ratios. The last  print
+
+#statement print the locations of the mutations, and the locations of the synonymous and nonsynonymous mutations in two seperate statements. They use for loops to iterate
+
+#through the mutationLocations list and print the values appended to the list with it's specific location number.     
 
 
 similarity = (1 - (mutations / lengthDNA))*100
 
 print('The percent similarity is: ', similarity, '%')
+
+print('The number of mutations is: ', mutations)
 
 print('The number of transitions is: ', transitions)
 
@@ -722,6 +771,12 @@ print('The locations of the mutations are: ', str(mutationLocations)[1:-1])
 for j in range(len(mutationLocations)):
 
                print('The mutation at location', mutationLocations[j], 'is a', mutationsType[j], 'mutation.')
+
+               print('The mutation at location',mutationLocations[j], 'is a', synonymousMutationLocations[j])
+
+
+
+               
 
 
 
