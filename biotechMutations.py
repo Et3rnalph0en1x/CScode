@@ -62,7 +62,7 @@ for l in range(0, lengthDNA, 3):
 
 #once for the first DNA sequence, and one for the second DNA sequence.
 
-for k in range(rawCodons1):
+for k in range(len(rawCodons1)):
 
     if rawCodons1[k][0] == 'T':
 
@@ -360,21 +360,21 @@ for k in range(rawCodons1):
                 codonList1.append('Gly')
 
 
-for k in range(rawCodons2):
+for h in range(len(rawCodons2)):
 
-    if rawCodons2[k][0] == 'T':
+    if rawCodons2[h][0] == 'T':
 
-        if rawCodons2[k][1] == 'T':
+        if rawCodons2[h][1] == 'T':
 
-            if rawCodons2[k][2] == 'T':
-
-                codonList2.append('Phe')
-
-            elif rawCodons2[k][2] == 'C':
+            if rawCodons2[h][2] == 'T':
 
                 codonList2.append('Phe')
 
-            elif rawCodons2[k][2] == 'A':
+            elif rawCodons2[h][2] == 'C':
+
+                codonList2.append('Phe')
+
+            elif rawCodons2[h][2] == 'A':
 
                 codonList2.append('Leu')
 
@@ -382,17 +382,17 @@ for k in range(rawCodons2):
 
                 codonList2.append('Leu')
 
-        elif rawCodons2[k][1] == 'C':
+        elif rawCodons2[h][1] == 'C':
 
-            if rawCodons2[k][2] == 'T':
-
-                codonList2.append('Ser')
-
-            elif rawCodons2[k][2] == 'C':
+            if rawCodons2[h][2] == 'T':
 
                 codonList2.append('Ser')
 
-            elif rawCodons2[k][2] == 'A':
+            elif rawCodons2[h][2] == 'C':
+
+                codonList2.append('Ser')
+
+            elif rawCodons2[h][2] == 'A':
 
                 codonList2.append('Ser')
 
@@ -400,17 +400,17 @@ for k in range(rawCodons2):
 
                 codonList2.append('Ser')
 
-        elif rawCodons2[k][1] == 'A':
+        elif rawCodons2[h][1] == 'A':
 
-            if rawCodons2[k][2] == 'T':
-
-                codonList2.append('Tyr')
-
-            elif rawCodons2[k][2] == 'C':
+            if rawCodons2[h][2] == 'T':
 
                 codonList2.append('Tyr')
 
-            elif rawCodons2[k][2] == 'A':
+            elif rawCodons2[h][2] == 'C':
+
+                codonList2.append('Tyr')
+
+            elif rawCodons2[h][2] == 'A':
 
                 codonList2.append('STOP')
 
@@ -420,15 +420,15 @@ for k in range(rawCodons2):
 
         else:
 
-            if rawCodons2[k][2] == 'T':
+            if rawCodons2[h][2] == 'T':
 
                 codonList2.append('Cys')
 
-            elif rawCodons2[k][2] == 'C':
+            elif rawCodons2[h][2] == 'C':
 
                 codonList2.append('Cys')
 
-            elif rawCodons2[k][2] == 'A':
+            elif rawCodons2[h][2] == 'A':
 
                 codonList2.append('STOP')
 
@@ -436,19 +436,19 @@ for k in range(rawCodons2):
 
                 codonList2.append('Trp')
 
-    elif rawCodons2[k][0] == 'C':
+    elif rawCodons2[h][0] == 'C':
 
-        if rawCodons2[k][1] == 'T':
+        if rawCodons2[h][1] == 'T':
 
-            if rawCodons2[k][2] == 'T':
-
-                codonList2.append('Leu')
-
-            elif rawCodons2[k][2] == 'C':
+            if rawCodons2[h][2] == 'T':
 
                 codonList2.append('Leu')
 
-            elif rawCodons2[k][2] == 'A':
+            elif rawCodons2[h][2] == 'C':
+
+                codonList2.append('Leu')
+
+            elif rawCodons2[h][2] == 'A':
 
                 codonList2.append('Leu')
 
@@ -456,34 +456,34 @@ for k in range(rawCodons2):
 
                 codonList2.append('Leu')
 
-        elif rawCodons2[k][1] == 'C':
+        elif rawCodons2[h][1] == 'C':
 
-            if rawCodons2[k][2] == 'T':
-
-                codonList2.append('Pro')
-
-            elif rawCodons2[k][2] == 'C':
+            if rawCodons2[h][2] == 'T':
 
                 codonList2.append('Pro')
 
-            elif rawCodons2[k][2] == 'A':
+            elif rawCodons2[h][2] == 'C':
+
+                codonList2.append('Pro')
+
+            elif rawCodons2[h][2] == 'A':
 
                 codonList2.append('Pro')
 
             else:
                 codonList2.append('Pro')
 
-        elif rawCodons2[k][1] == 'A':
+        elif rawCodons2[h][1] == 'A':
 
-            if rawCodons2[k][2] == 'T':
-
-                codonList2.append('His')
-
-            elif rawCodons2[k][2] == 'C':
+            if rawCodons2[h][2] == 'T':
 
                 codonList2.append('His')
 
-            elif rawCodons2[k][2] == 'A':
+            elif rawCodons2[h][2] == 'C':
+
+                codonList2.append('His')
+
+            elif rawCodons2[h][2] == 'A':
 
                 codonList2.append('Gin')
 
@@ -493,15 +493,15 @@ for k in range(rawCodons2):
 
         else:
 
-            if rawCodons2[k][2] == 'T':
+            if rawCodons2[h][2] == 'T':
 
                 codonList2.append('Arg')
 
-            elif rawCodons2[k][2] == 'C':
+            elif rawCodons2[h][2] == 'C':
 
                 codonList2.append('Arg')
 
-            elif rawCodons2[k][2] == 'A':
+            elif rawCodons2[h][2] == 'A':
 
                 codonList2.append('Arg')
 
@@ -509,19 +509,19 @@ for k in range(rawCodons2):
 
                 codonList2.append('Arg')
 
-    elif rawCodons2[k][0] == 'A':
+    elif rawCodons2[h][0] == 'A':
 
-        if rawCodons2[k][1] == 'T':
+        if rawCodons2[h][1] == 'T':
 
-            if rawCodons2[k][2] == 'T':
-
-                codonList2.append('Ile')
-
-            elif rawCodons2[k][2] == 'C':
+            if rawCodons2[h][2] == 'T':
 
                 codonList2.append('Ile')
 
-            elif rawCodons2[k][2] == 'A':
+            elif rawCodons2[h][2] == 'C':
+
+                codonList2.append('Ile')
+
+            elif rawCodons2[h][2] == 'A':
 
                 codonList2.append('Ile')
 
@@ -529,17 +529,17 @@ for k in range(rawCodons2):
 
                 codonList2.append('Met')
 
-        elif rawCodons2[k][1] == 'C':
+        elif rawCodons2[h][1] == 'C':
 
-            if rawCodons2[k][2] == 'T':
-
-                codonList2.append('Thr')
-
-            elif rawCodons2[k][2] == 'C':
+            if rawCodons2[h][2] == 'T':
 
                 codonList2.append('Thr')
 
-            elif rawCodons2[k][2] == 'A':
+            elif rawCodons2[h][2] == 'C':
+
+                codonList2.append('Thr')
+
+            elif rawCodons2[h][2] == 'A':
 
                 codonList2.append('Thr')
 
@@ -547,17 +547,17 @@ for k in range(rawCodons2):
 
                 codonList2.append('Thr')
 
-        elif rawCodons2[k][1] == 'A':
+        elif rawCodons2[h][1] == 'A':
 
-            if rawCodons2[k][2] == 'T':
-
-                codonList2.append('Asn')
-
-            elif rawCodons2[k][2] == 'C':
+            if rawCodons2[h][2] == 'T':
 
                 codonList2.append('Asn')
 
-            elif rawCodons2[k][2] == 'A':
+            elif rawCodons2[h][2] == 'C':
+
+                codonList2.append('Asn')
+
+            elif rawCodons2[h][2] == 'A':
 
                 codonList2.append('Lys')
 
@@ -567,15 +567,15 @@ for k in range(rawCodons2):
 
         else:
 
-            if rawCodons2[k][2] == 'T':
+            if rawCodons2[h][2] == 'T':
 
                 codonList2.append('Ser')
 
-            elif rawCodons2[k][2] == 'C':
+            elif rawCodons2[h][2] == 'C':
 
                 codonList2.append('Ser')
 
-            elif rawCodons2[k][2] == 'A':
+            elif rawCodons2[h][2] == 'A':
 
                 codonList2.append('Arg')
 
@@ -585,17 +585,17 @@ for k in range(rawCodons2):
 
     else:
     
-        if rawCodons2[k][1] == 'T':
+        if rawCodons2[h][1] == 'T':
 
-            if rawCodons2[k][2] == 'T':
-
-                codonList2.append('Val')
-
-            elif rawCodons2[k][2] == 'C':
+            if rawCodons2[h][2] == 'T':
 
                 codonList2.append('Val')
 
-            elif rawCodons2[k][2] == 'A':
+            elif rawCodons2[h][2] == 'C':
+
+                codonList2.append('Val')
+
+            elif rawCodons2[h][2] == 'A':
 
                 codonList2.append('Val')
 
@@ -603,17 +603,17 @@ for k in range(rawCodons2):
 
                 codonList2.append('Val')
 
-        elif rawCodons2[k][1] == 'C':
+        elif rawCodons2[h][1] == 'C':
 
-            if rawCodons2[k][2] == 'T':
-
-                codonList2.append('Ala')
-
-            elif rawCodons2[k][2] == 'C':
+            if rawCodons2[h][2] == 'T':
 
                 codonList2.append('Ala')
 
-            elif rawCodons2[k][2] == 'A':
+            elif rawCodons2[h][2] == 'C':
+
+                codonList2.append('Ala')
+
+            elif rawCodons2[h][2] == 'A':
 
                 codonList2.append('Ala')
 
@@ -621,17 +621,17 @@ for k in range(rawCodons2):
 
                 codonList2.append('Ala')
 
-        elif rawCodons2[k][1] == 'A':
+        elif rawCodons2[h][1] == 'A':
 
-            if rawCodons2[k][2] == 'T':
-
-                codonList2.append('Asp')
-
-            elif rawCodons2[k][2] == 'C':
+            if rawCodons2[h][2] == 'T':
 
                 codonList2.append('Asp')
 
-            elif rawCodons2[k][2] == 'A':
+            elif rawCodons2[h][2] == 'C':
+
+                codonList2.append('Asp')
+
+            elif rawCodons2[h][2] == 'A':
 
                 codonList2.append('Glu')
 
@@ -641,15 +641,15 @@ for k in range(rawCodons2):
 
         else:
 
-            if rawCodons2[k][2] == 'T':
+            if rawCodons2[h][2] == 'T':
 
                 codonList2.append('Gly')
 
-            elif rawCodons2[k][2] == 'C':
+            elif rawCodons2[h][2] == 'C':
 
                 codonList2.append('Gly')
 
-            elif rawCodons2[k][2] == 'A':
+            elif rawCodons2[h][2] == 'A':
 
                 codonList2.append('Gly')
 
