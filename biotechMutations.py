@@ -690,7 +690,7 @@ for i in range(lengthDNA):
 
         mutations += 1 
 
-        mutationLocations.append(i)
+        mutationLocations.append(i+1)
 
         if ((DNA1[i] == 'A') and (DNA2[i] == 'G')) or ((DNA1[i] == 'G') and (DNA2[i] == 'A')):
 
@@ -756,13 +756,15 @@ similarity = (1 - (mutations / lengthDNA))*100
 
 print('The percent similarity is: ', similarity, '%')
 
+print('The length of the DNA sequences is: ', lengthDNA)
+
 print('The number of mutations is: ', mutations)
 
 print('The number of transitions is: ', transitions)
 
 print('The number of transversions is: ', transversions)
 
-print('The ratio of transition mutations to tranversion mutations is: ', transitions,':',transversions)
+print('The ratio of transition mutations to transversion mutations is: ', transitions,':',transversions)
 
 print('The ratio of synonymous mutations to nonsynonymous mutations is: ', synonymousMutations,':',nonsynonymousMutations)
 
