@@ -64,7 +64,7 @@ def getRectanlgesList(x_coordinates, y_coordinates, windowHeight):
 
 def plotRectangles(rectanglesList, window):
     
-    for i in rectangles:
+    for i in rectanglesList:
         
         p1 = i.getP1()
         
